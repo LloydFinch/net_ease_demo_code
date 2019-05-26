@@ -78,7 +78,7 @@ open class BaseDao<T> : IBaseDao<T> {
      * 返回创建数据表语句
      */
     private fun getCreateTableSql(): String {
-        //根据凡事
+        //根据反射
         val fs = beanClass.declaredFields.fold(StringBuffer()) { acc, field ->
             when (field.type) {
                 String::class.java -> {
